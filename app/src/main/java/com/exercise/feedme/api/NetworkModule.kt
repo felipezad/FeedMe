@@ -1,7 +1,7 @@
 package com.exercise.feedme.api
 
-import com.bumptech.glide.annotation.GlideModule
+import dagger.Module
 
-@GlideModule
+@Module
 class NetworkModule {
 }

@@ -1,7 +1,8 @@
-package com.exercise.feedme
+package com.exercise.feedme.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.exercise.feedme.R
 
 class MainActivity : AppCompatActivity() {
 

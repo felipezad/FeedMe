@@ -12,6 +12,7 @@ buildscript {
 
         // local variables (use def)
         def androidx_test_version = '1.2.0'
+        def androidx_test_ext_version = '1.1.1'
         def annotations_version = '1.1.0'
         def appcompat_version = '1.1.0'
         def constraint_layout_version = '1.1.3'
@@ -90,6 +91,7 @@ buildscript {
                 "junit:junit:$junit_version",
                 "androidx.test:runner:$androidx_test_version",
                 "androidx.test:rules:$androidx_test_version",
+                "androidx.test.ext:junit:$androidx_test_ext_version",
 
                 // Espresso
                 "androidx.test.espresso:espresso-core:$expresso_version",
@@ -120,7 +122,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+
     }
 }
 

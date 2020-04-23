@@ -1,4 +1,4 @@
-package com.exercise.feedme.main
+package com.exercise.feedme.presentation.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

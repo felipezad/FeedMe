@@ -1,10 +1,10 @@
 package com.exercise.feedme.presentation.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.exercise.feedme.R
+import dagger.android.DaggerActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -2,7 +2,7 @@ package com.exercise.feedme.presentation.main
 
 import androidx.lifecycle.*
 import com.exercise.feedme.data.remote.model.FoodAnalysisResponse
-import com.exercise.feedme.domain.NutritionRepository
+import com.exercise.feedme.domain.nutrition.NutritionRepository
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject

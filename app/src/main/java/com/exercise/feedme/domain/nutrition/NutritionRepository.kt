@@ -1,4 +1,4 @@
-package com.exercise.feedme.domain
+package com.exercise.feedme.domain.nutrition
 
 import com.exercise.feedme.data.remote.NutritionService
 import com.exercise.feedme.data.remote.model.FoodAnalysisResponse

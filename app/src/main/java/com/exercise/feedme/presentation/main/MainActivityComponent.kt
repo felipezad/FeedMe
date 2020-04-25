@@ -1,7 +1,6 @@
 package com.exercise.feedme.presentation.main
 
 import com.exercise.feedme.presentation.ActivityScope
-import dagger.Component
 import dagger.Subcomponent
 import dagger.android.AndroidInjector
 

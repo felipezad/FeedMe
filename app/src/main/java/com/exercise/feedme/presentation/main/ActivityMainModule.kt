@@ -3,7 +3,7 @@ package com.exercise.feedme.presentation.main
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
 import com.exercise.feedme.data.remote.NutritionService
-import com.exercise.feedme.domain.NutritionRepository
+import com.exercise.feedme.domain.nutrition.NutritionRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -26,18 +26,10 @@ object MainModule {
     @Singleton
     @Provides
     @JvmStatic
-    fun provideNutritionRepository(nutritionService: NutritionService): NutritionRepository {
-        return NutritionRepository(nutritionService)
-    }
-
-    @Singleton
-    @Provides
-    @JvmStatic
     fun provideMainViewModelFactory(nutritionRepository: NutritionRepository): MainViewModel.Factory {
         return MainViewModel.Factory(nutritionRepository)
     }
 
-    @Singleton
     @Provides
     @JvmStatic
     fun provideMainViewModel(

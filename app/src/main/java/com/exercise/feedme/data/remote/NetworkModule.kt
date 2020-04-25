@@ -14,12 +14,14 @@ object NetworkModule {
 
     @Singleton
     @Provides
+    @JvmStatic
     fun provideNutritionService(retrofit: Retrofit): NutritionService {
         return retrofit.create(NutritionService::class.java)
     }
 
     @Singleton
     @Provides
+    @JvmStatic
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
@@ -30,6 +32,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
+    @JvmStatic
     fun provideOkHttp(): OkHttpClient {
         return OkHttpClient()
             .newBuilder()

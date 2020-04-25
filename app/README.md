@@ -28,6 +28,8 @@ https://stackoverflow.com/questions/51113770/dagger2-issue-with-cannot-be-provid
 
 https://stackoverflow.com/questions/49589467/how-to-work-with-daggerapplication-and-daggerappcompatactivity
 
+https://medium.com/chili-labs/android-viewmodel-injection-with-dagger-f0061d3402ff
+
 
 ### Others
 https://guides.github.com/features/mastering-markdown/

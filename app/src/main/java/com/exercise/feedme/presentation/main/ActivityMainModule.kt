@@ -1,6 +1,5 @@
 package com.exercise.feedme.presentation.main
 
-import androidx.lifecycle.ViewModelProviders
 import com.exercise.feedme.domain.nutrition.NutritionRepository
 import dagger.Binds
 import dagger.Module
@@ -26,15 +25,5 @@ object MainModule {
     @JvmStatic
     fun provideMainViewModelFactory(nutritionRepository: NutritionRepository): MainViewModel.Factory {
         return MainViewModel.Factory(nutritionRepository)
-    }
-
-    @Provides
-    @JvmStatic
-    fun provideMainViewModel(
-        viewModelFactory: MainViewModel.Factory,
-        mainActivity: MainActivity
-    ): MainViewModel {
-        return ViewModelProviders.of(mainActivity, viewModelFactory)
-            .get(MainViewModel::class.java)
     }
 }

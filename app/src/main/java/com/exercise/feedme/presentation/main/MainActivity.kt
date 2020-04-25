@@ -1,6 +1,8 @@
 package com.exercise.feedme.presentation.main
 
 import android.os.Bundle
+import android.util.Log
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.exercise.feedme.R
 import dagger.android.support.DaggerAppCompatActivity
@@ -18,5 +20,8 @@ class MainActivity : DaggerAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        mainViewModel.liveDataFoodAnalysis.observe(this, Observer { response ->
+            Log.d("[LD-FOOD-DATA]", response.uri)
+        })
     }
 }

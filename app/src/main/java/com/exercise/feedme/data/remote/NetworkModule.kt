@@ -25,7 +25,7 @@ object NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
-            .baseUrl("https://api.edamam.com/api")
+            .baseUrl("https://api.edamam.com/api/")
             .client(okHttpClient)
             .build()
     }

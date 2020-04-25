@@ -3,6 +3,8 @@
 ### Flow
 https://proandroiddev.com/kotlin-flow-on-android-quick-guide-76667e872166
 
+https://proandroiddev.com/using-livedata-flow-in-mvvm-part-i-a98fe06077a0
+
 https://proandroiddev.com/using-coroutines-and-flow-with-mvvm-architecture-796142dbfc2f
 
 ### Retrofit
@@ -33,3 +35,9 @@ https://guides.github.com/features/mastering-markdown/
 https://github.com/futurice/android-best-practices
 
 https://github.com/android/architecture-samples/tree/dev-dagger
+
+https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+
+https://medium.com/androiddevelopers/viewmodels-and-livedata-patterns-antipatterns-21efaef74a54
+
+https://medium.com/koderlabs/viewmodel-with-viewmodelprovider-factory-the-creator-of-viewmodel-8fabfec1aa4f

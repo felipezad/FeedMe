@@ -10,6 +10,6 @@ import javax.inject.Inject
 class NutritionRepository @Inject constructor(val nutritionService: NutritionService) {
 
     fun foodAnalysisFlow(food: String): Flow<FoodAnalysisResponse> {
-        return nutritionService.requestFoodAnalysis(food).flowOn(Dispatchers.IO)
+        return nutritionService.requestFoodAnalysis(food)
     }
 }

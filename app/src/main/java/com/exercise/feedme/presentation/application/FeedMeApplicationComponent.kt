@@ -3,6 +3,7 @@ package com.exercise.feedme.presentation.application
 import android.content.Context
 import com.exercise.feedme.data.remote.NetworkModule
 import com.exercise.feedme.domain.nutrition.NutritionModule
+import com.exercise.feedme.presentation.main.ActivityMainModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -10,7 +11,7 @@ import dagger.android.AndroidInjector
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AndroidInjectionModule::class, NetworkModule::class, NutritionModule::class])
+@Component(modules = [AndroidInjectionModule::class, NetworkModule::class, NutritionModule::class, ActivityMainModule::class])
 interface FeedMeApplicationComponent : AndroidInjector<FeedMeApplication> {
 
     @Component.Factory

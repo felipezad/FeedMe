@@ -42,11 +42,20 @@ object NetworkModule {
 
     private class ApiInterceptor : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
-            val request = chain.request().newBuilder()
-            request
-                .addHeader("api_id", "eff08d01")
-                .addHeader("app_key", "77727a2e8b3568cd23e183a67c22a936")
-            return chain.proceed(request.build())
+            val request = chain.request()
+            val urlBuilder = request.url().newBuilder()
+
+
+            val newUrl = urlBuilder
+                .addQueryParameter("app_id", "eff08d01")
+                .addQueryParameter("app_key", "77727a2e8b3568cd23e183a67c22a936")
+                .build()
+
+            val newRequest = request.newBuilder()
+                .url(newUrl)
+                .build()
+
+            return chain.proceed(newRequest)
         }
     }
 }

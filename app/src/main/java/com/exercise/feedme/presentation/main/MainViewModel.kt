@@ -4,7 +4,10 @@ import android.util.Log
 import androidx.lifecycle.*
 import com.exercise.feedme.data.remote.model.FoodAnalysisResponse
 import com.exercise.feedme.domain.nutrition.NutritionRepository
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -17,10 +20,20 @@ class MainViewModel @Inject constructor(val nutritionRepository: NutritionReposi
 
     fun getFoodAnalysisResponse(ingredient: String) {
         viewModelScope.launch {
-            nutritionRepository.foodAnalysisFlow(ingredient).collect { it ->
-                Log.d("FOOD", it.uri)
+            nutritionRepository.foodAnalysisFlow(ingredient)
+                .onStart {
+                    Log.d("FOOD", "STARTING")
+                }
+                .catch { e ->
+                    Log.d("FOOD", e.message)
+                }
+                .onCompletion {
+                    Log.d("FOOD", "COMPLETATION")
+                }
+                .collect { it ->
+                    Log.d("FOOD", it.uri)
 //                _mutableFoodAnalyse = MutableLiveData(it)
-            }
+                }
         }
     }
 

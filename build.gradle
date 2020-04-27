@@ -84,7 +84,8 @@ buildscript {
                 "androidx.room:room-compiler:$room_version",
                 "com.github.bumptech.glide:compiler:$glide_version",
                 "com.google.dagger:dagger-android-processor:$dagger_version",
-                "com.google.dagger:dagger-compiler:$dagger_version"
+                "com.google.dagger:dagger-compiler:$dagger_version",
+                "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
         ]
 
         testLibraries = [

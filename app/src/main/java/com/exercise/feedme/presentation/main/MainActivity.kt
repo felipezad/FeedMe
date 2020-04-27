@@ -23,5 +23,6 @@ class MainActivity : DaggerAppCompatActivity() {
         mainViewModel.liveDataFoodAnalysis.observe(this, Observer { response ->
             Log.d("[LD-FOOD-DATA]", response.uri)
         })
+        mainViewModel.getFoodAnalysisResponse("egg")
     }
 }

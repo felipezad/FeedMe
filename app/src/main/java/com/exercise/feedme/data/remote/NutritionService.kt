@@ -1,11 +1,11 @@
 package com.exercise.feedme.data.remote
 
 import com.exercise.feedme.data.remote.model.FoodAnalysisResponse
-import kotlinx.coroutines.flow.Flow
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface NutritionService {
 
     @GET("nutrition-data")
-    fun requestFoodAnalysis(food: String): Flow<FoodAnalysisResponse>
+    suspend fun requestFoodAnalysis(@Query("ingr") ingredient: String): FoodAnalysisResponse
 }

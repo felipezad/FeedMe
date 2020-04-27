@@ -1,5 +1,6 @@
 package com.exercise.feedme.presentation.main
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.exercise.feedme.data.remote.model.FoodAnalysisResponse
 import com.exercise.feedme.domain.nutrition.NutritionRepository
@@ -14,15 +15,17 @@ class MainViewModel @Inject constructor(val nutritionRepository: NutritionReposi
 
     val liveDataFoodAnalysis: LiveData<FoodAnalysisResponse> = _mutableFoodAnalyse
 
-    fun getFoodAnalysisResponse(food: String) {
+    fun getFoodAnalysisResponse(ingredient: String) {
         viewModelScope.launch {
-            nutritionRepository.foodAnalysisFlow(food).collect { foodAnalysisResponse ->
-                _mutableFoodAnalyse = MutableLiveData(foodAnalysisResponse)
+            nutritionRepository.foodAnalysisFlow(ingredient).collect { it ->
+                Log.d("FOOD", it.uri)
+//                _mutableFoodAnalyse = MutableLiveData(it)
             }
         }
     }
 
-    class Factory(private val nutritionRepository: NutritionRepository) : ViewModelProvider.Factory {
+    class Factory(private val nutritionRepository: NutritionRepository) :
+        ViewModelProvider.Factory {
 
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             return modelClass

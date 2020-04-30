@@ -37,6 +37,25 @@ class MainViewModel @Inject constructor(val nutritionRepository: NutritionReposi
         }
     }
 
+    fun getFoodAnalysisResponse(ingredients: List<String>) {
+            viewModelScope.launch {
+                nutritionRepository.foodAnalysisFlow(ingredients)
+                    .onStart {
+                        Log.d("FOOD", "STARTING")
+                    }
+                    .catch { e ->
+                        Log.d("FOOD", e.message)
+                    }
+                    .onCompletion {
+                        Log.d("FOOD", "COMPLETATION")
+                    }
+                    .collect { it ->
+                        Log.d("FOOD", it.uri)
+//                _mutableFoodAnalyse = MutableLiveData(it)
+                    }
+            }
+    }
+
     class Factory(private val nutritionRepository: NutritionRepository) :
         ViewModelProvider.Factory {
 
